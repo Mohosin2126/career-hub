@@ -1,26 +1,35 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import ReactDOM from 'react-dom'
 import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './Pages/Layout/Layout.jsx';
+import Home from './Pages/Home.jsx';
+import AppliedJobs from './Pages/AppliedJobs';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Layout></Layout>,
+    children: [
+      {
+       path:"/",
+       element:<Home></Home>
+        
+      },
+      {
+        path:"/applied",
+        element:<AppliedJobs></AppliedJobs>
+         
+       },
+    ],
   },
 ]);
 
-
-
-
-
+// Create a root and render the JSX inside it
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-        <RouterProvider router={router} />
-
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
