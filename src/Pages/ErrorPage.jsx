@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const ErrorPage = () => {
@@ -6,6 +7,7 @@ const ErrorPage = () => {
             <h1>error kha gaya beta 
                 
             </h1>
+            
         </div>
     );
 };
