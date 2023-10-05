@@ -3,7 +3,7 @@
 const AppliedJobs = () => {
     return (
         <div>
-            <h1>hello there this is me how can i help you  </h1>
+            <h1>hello there I'm applied jobs  </h1>
         </div>
     );
 };
