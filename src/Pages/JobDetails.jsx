@@ -1,11 +1,17 @@
 import { useLoaderData, useParams } from "react-router-dom";
-// const {id,logo,job_title,company_name,remote_or_onsite,location,job_type,salary,job_description,job_responsibility,educational_requirements,experiences,contact_information,}
+import swal from 'sweetalert';
+import saveJobApplication from "../LocalStorage";
+
 const JobDetails = () => {
     const jobs=useLoaderData()
     const {id}= useParams()
    const Id=parseInt(id)
    const job=jobs.find(job=>job.id===Id)
    console.log(job)
+   const handledAppliedButton=()=>{
+  
+    swal("Thank you !", "we received your application!", "success");
+   }
     return (
         <div className="mb-20">
             <div >
@@ -51,7 +57,7 @@ const JobDetails = () => {
      </div>
 
     </div>
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex mx-auto mt-5 ">
+    <button onClick={handledAppliedButton} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex mx-auto mt-5 ">
  Apply
 </button>
 
