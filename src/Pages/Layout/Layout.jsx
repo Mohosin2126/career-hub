@@ -7,8 +7,10 @@ import Navbar from '../../Header/Navbar';
 const Layout = () => {
     return (
         <div>
+          <div className='max-w-6xl mx-auto mt-8'>
           <Navbar></Navbar>
             <Outlet></Outlet>
+          </div>
             <Footer></Footer>
         </div>
     );
