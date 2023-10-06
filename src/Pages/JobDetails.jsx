@@ -1,15 +1,17 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import swal from 'sweetalert';
-import saveJobApplication from "../LocalStorage";
+import { saveJobApplication } from "../LocalStorage";
+
 
 const JobDetails = () => {
     const jobs=useLoaderData()
     const {id}= useParams()
-   const Id=parseInt(id)
-   const job=jobs.find(job=>job.id===Id)
-   console.log(job)
+   const idInt=parseInt(id)
+   const job=jobs.find(job=>job.id===idInt)
+   
    const handledAppliedButton=()=>{
-  
+    saveJobApplication( idInt)
+
     swal("Thank you !", "we received your application!", "success");
    }
     return (
