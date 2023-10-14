@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './Pages/Layout/Layout.jsx';
 import Home from './Pages/Home.jsx';
 import AppliedJobs from './Pages/AppliedJobs';
 import Jobs from './Pages/Jobs';
@@ -10,6 +9,7 @@ import Blogs from './Pages/Blogs';
 import Statistics from './Pages/Statistics';
 import ErrorPage from './Pages/ErrorPage';
 import JobDetails from './Pages/JobDetails';
+import Layout from './Layout/Layout';
 
 
 
